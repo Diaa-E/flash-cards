@@ -7,6 +7,11 @@
     --background: rgb(185, 185, 185);
     --font: rgb(88, 94, 104);
     --dark-border: rgb(112, 112, 112);
+    --button-bg: rgb(56, 128, 156);
+    --button-font: rgb(255, 255, 255);
+    --button-shadow: rgb(31, 67, 82);
+    --button-hover: rgb(157, 219, 255);
+    --button-shadow-hover: rgb(113, 154, 179);
  }
 
 *{
@@ -26,6 +31,37 @@ body{
 
 h1{
     margin: 20px auto;
+}
+
+.controls{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    padding: 5px 0;
+    gap: 20px;
+    min-width: 400px;
+    min-height: 50px;
+    font-size: 32px;
+}
+
+.controls>button{
+    margin: 0;
+    min-width: 200px;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--dark-border);
+    box-shadow: 0 0 10px var(--button-shadow);
+    background-color: var(--button-bg);
+    color: var(--button-font);
+}
+
+.controls>button:hover{
+    background-color: var(--button-hover);
+    border: 1px solid var(--button-hover);
+    box-shadow: 0 0 10px var(--button-shadow-hover);
+    color: var(--font);
 }
 
 .card{
