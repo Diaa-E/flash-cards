@@ -6,6 +6,7 @@
 //Sould be fed from the JSON in the future
 const key = "du";
 const value = "en";
+let currentCard;
 
 //Data pairs object
 const data = [
@@ -40,6 +41,7 @@ const divUserCard = document.querySelector("#userCard");
 //Event listeners-----------------------
 
 window.addEventListener("load", ()=>{
+    pickCard();
     disableElement(btnSubmit);
 });
 
@@ -114,10 +116,15 @@ function doTheyMatch(userInput, correctAns)
 
     if (userInput === correctAns)
     {
-        return true
+        return true;
     }
     else
     {
-        return false
+        return false;
     }
+}
+
+function pickCard()
+{
+    currentCard = Math.floor(Math.random()*data.length);
 }
