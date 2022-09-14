@@ -6,7 +6,9 @@
 //Sould be fed from the JSON in the future
 const key = "du";
 const value = "en";
-let currentCard;
+//When the window is loading, the array has no data and this remains undefined
+//a temporary fix with a constant initial value
+let currentCard = 0;
 
 //Data pairs object
 const data = [
@@ -41,8 +43,7 @@ const divUserCard = document.querySelector("#userCard");
 //Event listeners-----------------------
 
 window.addEventListener("load", ()=>{
-    pickCard();
-    disableElement(btnSubmit);
+    getNextCard();
 });
 
 btnSubmit.addEventListener("click", () =>{
@@ -73,11 +74,26 @@ function submitAns()
     //no double submissions
     disableElement(btnSubmit);
     enableElement(btnNext);
+
+    console.log(txtUser.value, data[currentCard][value]);
+    if (doTheyMatch(txtUser.value, data[currentCard][value]))
+    {
+        divUserCard.classList.add("correct");
+    }
+    else
+    {
+        divUserCard.classList.add("wrong");
+    }
 };
 
 function getNextCard()
 {
-    disableElement(btnNext)
+    //remove validation visuals
+    divUserCard.classList.remove("correct");
+    divUserCard.classList.remove("wrong");
+    
+    pickCard();
+    disableElement(btnNext);
     clearElement(txtUser);
     enableElement(txtUser);
     disableElement(btnSubmit);
@@ -126,5 +142,6 @@ function doTheyMatch(userInput, correctAns)
 
 function pickCard()
 {
+    //floor to avoid picking outside array boundary
     currentCard = Math.floor(Math.random()*data.length);
 }
