@@ -107,3 +107,18 @@ function clearElement(targetElement)
 {
     targetElement.value = null;
 }
+
+function doTheyMatch(userInput, correctAns)
+{
+    userInput = userInput.toLowerCase();
+    correctAns = correctAns.toLowerCase();
+
+    if (userInput === correctAns)
+    {
+        return true
+    }
+    else
+    {
+        return false
+    }
+}
