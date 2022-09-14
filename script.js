@@ -66,6 +66,9 @@ userAns.addEventListener("input", (e) =>{
 
 function submitAns()
 {
+    //Answers can't be modified once submitted
+    disableElement(userAns);
+    //no double submissions
     disableElement(btnSubmit);
     isSubmitted = true;
     toggleNext();
@@ -73,6 +76,7 @@ function submitAns()
 
 function getNextCard()
 {
+    enableElement(userAns);
     isSubmitted = false;
     toggleNext();
     clearElement(userAns);
