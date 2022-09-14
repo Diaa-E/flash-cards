@@ -17,6 +17,18 @@ const data = [
     {
         [key]: "Haus",
         [value]: "House"
+    },
+    {
+        [key]: "Igol",
+        [value]: "Hedgehog"
+    },
+    {
+        [key]: "Vogel",
+        [value]: "Bird"
+    },
+    {
+        [key]: "Rot",
+        [value]: "Red"
     }
 ];
 
