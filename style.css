@@ -12,6 +12,10 @@
     --button-shadow: rgb(31, 67, 82);
     --button-hover: rgb(157, 219, 255);
     --button-shadow-hover: rgb(113, 154, 179);
+    --correct: rgb(47, 201, 111);
+    --correct-bg: rgb(159, 255, 199);
+    --wrong: rgb(206, 49, 49);
+    --wrong-bg: rgb(207, 159, 159);
  }
 
 *{
@@ -108,4 +112,16 @@ h1{
     appearance: none;
     box-shadow: 0 0 5px var(--shadow);
     border: 1px dashed var(--dark-border);
+}
+
+.correct{
+    box-shadow: 0 0 10px var(--correct);
+    border: 1px solid var(--correct);
+    background-color: var(--correct-bg);
+}
+
+.wrong{
+    box-shadow: 0 0 10px var(--wrong);
+    border: 1px solid var(--wrong);
+    background-color: var(--wrong-bg);
 }

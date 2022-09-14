@@ -32,7 +32,6 @@ const data = [
     }
 ];
 
-
 //document elements---------------------------
 const btnSubmit = document.querySelector("#submit");
 const btnNext = document.querySelector("#next");
