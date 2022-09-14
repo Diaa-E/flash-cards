@@ -6,7 +6,6 @@
 //Sould be fed from the JSON in the future
 const key = "du";
 const value = "en";
-let isSubmitted = false;
 
 //Data pairs object
 const data = [
@@ -70,29 +69,17 @@ function submitAns()
     disableElement(userAns);
     //no double submissions
     disableElement(btnSubmit);
+    enableElement(btnNext);
     isSubmitted = true;
-    toggleNext();
 };
 
 function getNextCard()
 {
-    enableElement(userAns);
     isSubmitted = false;
-    toggleNext();
+    disableElement(btnNext)
     clearElement(userAns);
+    enableElement(userAns);
     disableElement(btnSubmit);
-};
-
-function toggleNext()
-{
-    if (isSubmitted)
-    {
-        btnNext.disabled = false;
-    }
-    else
-    {
-        btnNext.disabled = true;
-    }
 };
 
 function isEmpty(userAns)
