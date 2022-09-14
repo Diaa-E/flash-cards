@@ -34,7 +34,8 @@ const data = [
 //document elements---------------------------
 const btnSubmit = document.querySelector("#submit");
 const btnNext = document.querySelector("#next");
-const userAns = document.querySelector("#answer");
+const txtUser = document.querySelector("#answer");
+const divUserCard = document.querySelector("#userCard");
 
 //Event listeners-----------------------
 
@@ -50,7 +51,7 @@ btnNext.addEventListener("click", () =>{
     getNextCard();
 });
 
-userAns.addEventListener("input", (e) =>{
+txtUser.addEventListener("input", (e) =>{
     if (isEmpty(e.target))
     {
         disableElement(btnSubmit);
@@ -66,19 +67,17 @@ userAns.addEventListener("input", (e) =>{
 function submitAns()
 {
     //Answers can't be modified once submitted
-    disableElement(userAns);
+    disableElement(txtUser);
     //no double submissions
     disableElement(btnSubmit);
     enableElement(btnNext);
-    isSubmitted = true;
 };
 
 function getNextCard()
 {
-    isSubmitted = false;
     disableElement(btnNext)
-    clearElement(userAns);
-    enableElement(userAns);
+    clearElement(txtUser);
+    enableElement(txtUser);
     disableElement(btnSubmit);
 };
 
