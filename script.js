@@ -66,6 +66,7 @@ userAns.addEventListener("input", (e) =>{
 
 function submitAns()
 {
+    disableElement(btnSubmit);
     isSubmitted = true;
     toggleNext();
 };
