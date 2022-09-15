@@ -6,9 +6,7 @@
 //Sould be fed from the JSON in the future
 const key = "du";
 const value = "en";
-//When the window is loading, the array has no data and this remains undefined
-//a temporary fix with a constant initial value
-let currentCard = 0;
+let currentCard;
 
 //Data pairs object
 const data = [
@@ -75,7 +73,6 @@ function submitAns()
     disableElement(btnSubmit);
     enableElement(btnNext);
 
-    console.log(txtUser.value, data[currentCard][value]);
     if (doTheyMatch(txtUser.value, data[currentCard][value]))
     {
         divUserCard.classList.add("correct");
@@ -91,7 +88,7 @@ function getNextCard()
     //remove validation visuals
     divUserCard.classList.remove("correct");
     divUserCard.classList.remove("wrong");
-    
+
     pickCard();
     disableElement(btnNext);
     clearElement(txtUser);
