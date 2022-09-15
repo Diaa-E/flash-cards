@@ -6,6 +6,9 @@
 //Sould be fed from the JSON in the future
 const key = "du";
 const value = "en";
+let score = 0;
+//account for nextcard call on load
+let cards = 0;
 let currentCard;
 
 //Data pairs object
@@ -40,6 +43,7 @@ const divUserCard = document.querySelector("#userCard");
 const pQuestion = document.querySelector("p#question");
 const pCorrectAns = document.querySelector("p#correctAnswer")
 const lblCrossTick = document.querySelectorAll(".card>label");
+const pScore = document.querySelector('p.score');
 
 //Event listeners-----------------------
 
@@ -82,6 +86,7 @@ function submitAns()
         lblCrossTick.forEach(label =>{
             addCssClass(label, "tick");
         });
+        updateScore(1);
     }
     else
     {
@@ -89,6 +94,7 @@ function submitAns()
         lblCrossTick.forEach(label =>{
             addCssClass(label, "cross");
         });
+        updateScore(0);
     }
 
     showElement(pCorrectAns);
@@ -96,6 +102,7 @@ function submitAns()
 
 function getNextCard()
 {
+    cards +=1 ;
     //remove validation visuals
     removeCssClass(divUserCard, "correct");
     removeCssClass(divUserCard, "wrong");
@@ -185,4 +192,15 @@ function addCssClass(docElement, className)
 function removeCssClass(docElement, className)
 {
     docElement.classList.remove(className);
+}
+
+function updateScoreBoard()
+{
+    pScore.textContent = `${score} / ${cards}`;
+}
+
+function updateScore(increment = 1)
+{
+    score += increment;
+    updateScoreBoard();
 }
