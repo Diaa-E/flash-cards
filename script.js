@@ -39,7 +39,7 @@ const txtUser = document.querySelector("#answer");
 const divUserCard = document.querySelector("#userCard");
 const pQuestion = document.querySelector("p#question");
 const pCorrectAns = document.querySelector("p#correctAnswer")
-
+const lblCrossTick = document.querySelectorAll(".card>label");
 
 //Event listeners-----------------------
 
@@ -78,11 +78,11 @@ function submitAns()
 
     if (doTheyMatch(txtUser.value, data[currentCard][value]))
     {
-        divUserCard.classList.add("correct");
+        addCssClass(divUserCard, "correct");
     }
     else
     {
-        divUserCard.classList.add("wrong");
+        addCssClass(divUserCard, "wrong");
     }
 
     showElement(pCorrectAns);
@@ -91,8 +91,8 @@ function submitAns()
 function getNextCard()
 {
     //remove validation visuals
-    divUserCard.classList.remove("correct");
-    divUserCard.classList.remove("wrong");
+    removeCssClass(divUserCard, "correct");
+    removeCssClass(divUserCard, "wrong");
 
     pickCard();
 
@@ -162,4 +162,14 @@ function hideElement(docElement)
 function showElement(docElement)
 {
     docElement.hidden = false;
+}
+
+function addCssClass(docElement, className)
+{
+    docElement.classList.add(className);
+}
+
+function removeCssClass(docElement, className)
+{
+    docElement.classList.remove(className);
 }

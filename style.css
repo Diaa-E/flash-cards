@@ -129,3 +129,19 @@ h1{
     border: 1px solid var(--wrong);
     background-color: var(--wrong-bg);
 }
+
+.tick{
+    color: var(--correct);
+}
+
+.tick::after{
+    content: '✓';
+}
+
+.cross{
+    color: var(--wrong);
+}
+
+.cross::after{
+    content: '✘';
+}
