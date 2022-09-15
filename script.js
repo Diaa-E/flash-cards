@@ -79,10 +79,16 @@ function submitAns()
     if (doTheyMatch(txtUser.value, data[currentCard][value]))
     {
         addCssClass(divUserCard, "correct");
+        lblCrossTick.forEach(label =>{
+            addCssClass(label, "tick");
+        });
     }
     else
     {
         addCssClass(divUserCard, "wrong");
+        lblCrossTick.forEach(label =>{
+            addCssClass(label, "cross");
+        });
     }
 
     showElement(pCorrectAns);
@@ -93,6 +99,13 @@ function getNextCard()
     //remove validation visuals
     removeCssClass(divUserCard, "correct");
     removeCssClass(divUserCard, "wrong");
+
+    lblCrossTick.forEach(label =>{
+        removeCssClass(label, "tick");
+    });
+    lblCrossTick.forEach(label =>{
+        removeCssClass(label, "cross");
+    });
 
     pickCard();
 
