@@ -84,6 +84,8 @@ function submitAns()
     {
         divUserCard.classList.add("wrong");
     }
+
+    showElement(pCorrectAns);
 };
 
 function getNextCard()
@@ -102,6 +104,7 @@ function getNextCard()
     clearElement(txtUser);
     enableElement(txtUser);
     disableElement(btnSubmit);
+    hideElement(pCorrectAns);
 };
 
 function isEmpty(userAns)
