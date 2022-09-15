@@ -93,8 +93,11 @@ function getNextCard()
     divUserCard.classList.remove("wrong");
 
     pickCard();
+
     //update upper card
     pQuestion.textContent = data[currentCard][key];
+    pCorrectAns.textContent = data[currentCard][value];
+
     disableElement(btnNext);
     clearElement(txtUser);
     enableElement(txtUser);
@@ -146,4 +149,14 @@ function pickCard()
 {
     //floor to avoid picking outside array boundary
     currentCard = Math.floor(Math.random()*data.length);
+}
+
+function hideElement(docElement)
+{
+    docElement.hidden = true;
+}
+
+function showElement(docElement)
+{
+    docElement.hidden = false;
 }

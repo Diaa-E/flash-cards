@@ -37,6 +37,10 @@ h1{
     margin: 20px auto;
 }
 
+#correctAnswer{
+    color: var(--background);
+}
+
 .controls{
     display: flex;
     align-items: center;
