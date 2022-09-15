@@ -196,7 +196,7 @@ function removeCssClass(docElement, className)
 
 function updateScoreBoard()
 {
-    pScore.textContent = `${score} / ${cards}`;
+    pScore.textContent = `${score} / ${cards} (${Math.round(score/cards * 100)}%)`;
 }
 
 function updateScore(increment = 1)
