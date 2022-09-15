@@ -37,6 +37,9 @@ const btnSubmit = document.querySelector("#submit");
 const btnNext = document.querySelector("#next");
 const txtUser = document.querySelector("#answer");
 const divUserCard = document.querySelector("#userCard");
+const pQuestion = document.querySelector("p#question");
+const pCorrectAns = document.querySelector("p#correctAnswer")
+
 
 //Event listeners-----------------------
 
@@ -90,6 +93,8 @@ function getNextCard()
     divUserCard.classList.remove("wrong");
 
     pickCard();
+    //update upper card
+    pQuestion.textContent = data[currentCard][key];
     disableElement(btnNext);
     clearElement(txtUser);
     enableElement(txtUser);
