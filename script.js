@@ -3,11 +3,11 @@
 //Global vars------------------------------
 
 //key and pair names are changed based on purpose
-//Sould be fed from the JSON in the future
+//Should be fed from the JSON in the future
 const key = "du";
 const value = "en";
 let score = 0;
-//account for nextcard call on load
+//account for getNextCard call on load
 let cards = 0;
 let currentCard;
 
