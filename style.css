@@ -170,16 +170,19 @@ h1{
     }
 
     .card-container{
+        min-width: 90vw;
+        padding: 10px;
         margin-top: 30px;
         margin-bottom: 30px;
+        justify-content: space-between;
         flex-direction: row;
         gap: 20px;
     }
 
     .card{
-        min-width: 500px;
+        min-width: 600px;
         min-height: 300px;
-        font-size: 38px;
+        font-size: 42px;
     }
 
     .controls>button{
