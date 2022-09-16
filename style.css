@@ -192,4 +192,8 @@ h1{
     .score{
         font-size: 32px;
     }
+
+    .cross, .tick{
+        font-size: 64px;
+    }
 }
