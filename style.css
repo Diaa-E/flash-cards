@@ -86,6 +86,14 @@ h1{
     color: var(--font);
 }
 
+.card-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
 .card{
     color: var(--font);
     background-color: white;
@@ -153,4 +161,32 @@ h1{
     min-width: 400px;
     padding: 10px;
     color: var(--shadow);
+}
+
+@media only screen and (min-width: 600px){
+
+    h1{
+        font-size: 56px;
+    }
+
+    .card-container{
+        margin-top: 30px;
+        margin-bottom: 30px;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .card{
+        min-width: 500px;
+        min-height: 300px;
+        font-size: 38px;
+    }
+
+    .controls>button{
+        font-size: 24px;
+    }
+
+    .score{
+        font-size: 32px;
+    }
 }
